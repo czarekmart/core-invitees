@@ -9,9 +9,10 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Thanks</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 </head>
-<body>
-    <div>
+<body class="text-center">
+
         <p>
             <h3>Thank you, @Model.Name!</h3>
             @if(Model.WillAttend == true)
@@ -26,8 +27,8 @@
         </p>
 
         <p>
-            Clink <a asp-action="ListResponses">here</a> to see who is coming.
+            Click <a class="navbar-link" asp-action="ListResponses">here</a> to see who is coming.
         </p>
-    </div>
+
 </body>
 </html>
