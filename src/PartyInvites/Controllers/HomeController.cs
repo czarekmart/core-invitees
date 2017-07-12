@@ -58,5 +58,17 @@ namespace PartyInvites.Controllers
         {
             return View();
         }
-    }
+
+		//public IActionResult PageLength()
+		//{
+		//	return View(new Models.PageLength() { Address="www.fox.com", Length = 4588 });
+		//}
+		//}
+		public async Task<ViewResult> PageLength()
+		{
+			var pl = new Models.PageLength() { Address = "http://www.foxnews.com/" };
+			pl.Length = await Models.PageLength.GetPageLength(pl.Address) ?? 999;
+			return View(pl);
+		}
+	}
 }
